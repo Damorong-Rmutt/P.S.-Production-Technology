@@ -1,0 +1,74 @@
+#banner, .slider-container {
+  position: relative;
+  width: 100%;
+  height: 500px; /* 💻 PC/Notebook Default */
+  overflow: hidden;
+}
+
+#banner img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 3s ease;
+}
+
+.visible { opacity: 1; z-index: 1; }
+.hidden { opacity: 0; z-index: 0; }
+
+.slide-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 2;
+}
+
+.dot {
+  width: 40px;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.dot.active { background-color: #000; }
+
+/* 🔻 Responsive Notebook / Tablet */
+@media (max-width: 1024px) {
+  #banner, .slider-container {
+    height: 400px; /* 📏 Notebook ขนาดกลาง */
+  }
+
+  .dot {
+    width: 30px;
+    height: 5px;
+  }
+}
+
+/* 🔻 Responsive โทรศัพท์มือถือ */
+@media (max-width: 768px) {
+  #banner, .slider-container {
+    height: 250px; /* 📱 มือถือ */
+  }
+
+  .dot {
+    width: 20px;
+    height: 4px;
+  }
+}
+
+/* 🔻 โทรศัพท์เล็กมาก */
+@media (max-width: 480px) {
+  #banner, .slider-container {
+    height: 180px; /* โทรศัพท์จอเล็ก */
+  }
+
+  .dot {
+    width: 15px;
+    height: 4px;
+  }
+}

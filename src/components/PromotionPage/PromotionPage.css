@@ -1,0 +1,188 @@
+.promotion-page {
+  display: flex;
+  background-color: white;
+  padding: 10px;
+  max-width: 1350px; /* 🔥 จำกัดความกว้าง */
+  margin: 0 auto; /* 🔥 อยู่ตรงกลาง */
+  border-radius: 8px; /* เพิ่มมุมโค้งถ้าต้องการ */
+  flex-wrap: wrap;
+}
+  
+  .promotion-sidebar {
+    width: 250px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    height: 550px;
+  }
+
+  
+  .promotion-sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .promotion-sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .promotion-sidebar li {
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    border-radius: 25px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .promotion-sidebar li.active {
+    background: red;;
+    color: white;
+    font-weight: bold;
+  }
+
+  .promotion-sidebar li.active:hover {
+    background: red; /* 🔥 คงสีเดิมไว้ */
+    box-shadow: none; /* 🔥 ไม่มีเงาเพิ่ม */
+  }
+
+  .promotion-sidebar li:hover {
+    background: #e0e0e0; /* 🔥 สีเทาเข้มขึ้น */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* 🔥 เงาลึกขึ้น */
+  }
+
+  .promotion-sidebar img{
+    width: 210px;
+    height: 90px;
+    border: 1px solid red;
+  }
+  
+  .view-all-btn {
+    background: white;
+    color: black;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%; /* 🔥 ยาวเต็ม sidebar */
+    box-sizing: border-box; /* 🔥 คำนวณ padding ด้วย */
+    margin-top: 20px;
+    text-align: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    font-size: 16px;
+  }
+  .view-all-btn:hover {
+    background: red; /* 🔥 สีแดงเข้มขึ้น */
+    transform: translateY(-2px); /* 🔥 ขยับขึ้นเล็กน้อย */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 🔥 เพิ่มเงาเบา ๆ */
+    color: white;
+  }
+  
+  .promotion-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .promotion-content h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .promotion-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    gap: 20px;
+  }
+  
+  .promotion-card {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    height: 400px;
+  }
+  
+  .promotion-card img {
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden; 
+    transition: transform 0.3s ease;
+  }
+
+  .promotion-card:hover img {
+    transform: scale(1.1); /* 🔥 ซูมเล็กน้อย */
+  }
+  .promotion-card .name{
+    font-weight: bold;
+  }
+  .price-row {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* หรือ flex-start */
+    gap: 10px; /* ระยะห่างระหว่างราคา */
+    margin-top: 5px;
+  }
+  
+  .price {
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .old-price {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 14px;
+  }
+
+  .promotion-card .description{
+    font-size: 12px;
+    font-style: normal;
+    color:  #B6B6B4;
+  }
+  .promotion-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* 🔥 เงาลึกขึ้น */
+  }
+
+  @media (max-width: 1024px) {
+    .promotion-page {
+      flex-direction: column; /* 🔥 ซ้อนแนวตั้ง */
+      padding: 10px;
+    }
+  
+    .promotion-sidebar {
+      width: 100%; /* 🔥 เต็มหน้าจอเล็ก */
+      margin-bottom: 20px;
+    }
+  
+    .promotion-content {
+      padding: 20px;
+    }
+  
+    .promotion-grid-2 {
+      grid-template-columns: repeat(2, minmax(150px, 1fr)); /* Tablet 2 คอลัมน์ */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .promotion-grid-2 {
+      grid-template-columns: 1fr; /* Mobile 1 คอลัมน์ */
+    }
+  
+    .promotion-content h3 {
+      font-size: 18px;
+    }
+  
+    .promotion-sidebar h2 {
+      font-size: 16px;
+    }
+  }
+  

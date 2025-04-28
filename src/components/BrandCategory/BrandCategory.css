@@ -1,0 +1,173 @@
+.brand-category-section {
+  background-color: #ffff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brand-category-section h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.brand-category-grid {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 15px;
+  justify-content: center;
+}
+
+.brand-category-box {
+  background-color: white;
+  border-radius: 8px;
+  width: 250px;
+  height: 100px;
+  padding: 15px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: row; /* 🔥 แนวนอน */
+  align-items: center;
+  justify-content: flex-start;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  gap: 10px; /* ระยะห่างไอคอนกับข้อความ */
+  border: 1px solid #e0e0e0;
+}
+.brand-category-box img{
+  width: 100%;
+}
+#Dahua {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#Dahua img{
+  width: 70%;
+}
+
+#imou {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#imou img{
+  width: 70%;
+}
+
+#ezviz {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#ezviz img{
+  width: 90%;
+}
+
+#hilook {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#hilook img{
+  width: 70%;
+}
+
+#wd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#wd img{
+  width: 90%;
+}
+
+#seagate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#seagate img{
+  width: 90%;
+}
+
+#cyberpower {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#cyberpower img{
+  width: 120%;
+}
+
+#ruijie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#ruijie img{
+  width: 65%;
+}
+
+#reyee {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#reyee img{
+  width: 60%;
+}
+
+#tp-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#tp-link img{
+  width: 70%;
+}
+#zkteno {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#zkteno img{
+  width: 80%;
+}
+
+#link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#link img{
+  width: 60%;
+}
+
+#zircon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#zircon img{
+  width: 70%;
+}
+
+.brand-category-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.brand-category-box span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  text-align: left;
+}
+

@@ -1,0 +1,52 @@
+/* 🔻 Brand Slider */
+.brand-step-scroll {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    cursor: grabbing;
+    background-color: white;
+    width: 100%;
+    max-width: 100vw;
+    height: 80px;   
+    align-items: center;
+  }
+  
+  .brand-step-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .brand-track {
+    display: inline-flex;
+    gap: 60px;
+    min-width: max-content;
+    padding-left: 60px;
+    padding-right: 100px;
+    justify-content: center; 
+    text-align: center;
+  }
+  
+  .brand-track img {
+    height: 45px;
+    flex-shrink: 0;
+    transition: transform 0.3s;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .brand-track img:hover {
+    transform: scale(1.1);
+    height: 45px;
+    flex-shrink: 0;
+  }
+  
+  .brand-step-scroll.dragging img {
+    transform: none !important;
+    transition: none !important;
+    pointer-events: none;
+  }
+  
+  .brand-step-scroll, .brand-track, .brand-track img {
+    user-select: none; /* ❌ ไม่ให้ select อะไรเลย */
+    -webkit-user-drag: none; /* ❌ ห้ามลากภาพแบบ browser ทั่วไป */
+  }
