@@ -8,7 +8,7 @@ export default function PromotionPage() {
 
   // 🔥 ดึงหมวดหมู่จาก API
   useEffect(() => {
-    fetch('http://localhost:5000/api/categories')
+    fetch('http://192.168.1.153:5000/api/categories')
       .then(res => res.json())
       .then(data => {
         setCategories(data);
@@ -18,21 +18,21 @@ export default function PromotionPage() {
 
   // 🔥 ดึงสินค้าตามหมวดหมู่จาก API
   useEffect(() => {
-    if (selectedCategory) {
-      fetch(`http://localhost:5000/api/products?category=${selectedCategory}`)
-        .then(res => res.json())
-        .then(data => {
-          console.log("ข้อมูลสินค้าจาก API:", data);
-          if (Array.isArray(data)) {
-            setProduct(data);
-          } else {
-            console.error("ข้อมูลไม่ใช่ array:", data);
-            setProduct([]); // แก้ไขชั่วคราว
-          }
-        })
-        .catch(err => console.error("Fetch Error:", err));
-    }
-  }, [selectedCategory]);
+  if (selectedCategory) {
+    fetch(`http://192.168.1.153:5000/api/products?category=${selectedCategory}`)
+      .then(res => res.json())
+      .then(data => {
+        console.log("ข้อมูลสินค้าจาก API:", data);
+        if (Array.isArray(data)) {
+          setProduct(data);
+        } else {
+          console.error("ข้อมูลไม่ใช่ array:", data);
+          setProduct([]); // แก้ไขชั่วคราว
+        }
+      })
+      .catch(err => console.error("Fetch Error:", err));
+  }
+}, [selectedCategory]);
 
   return (
     <div className="promotion-page">
@@ -48,8 +48,8 @@ export default function PromotionPage() {
               {cat.category_name}
             </li>
           ))}
-          <img src="https://place-hold.it/210x90" alt="banner" />
         </ul>
+        <img src="https://place-hold.it/210x90" alt="banner" />
       </aside>
       <main className="promotion-content">
         <h3>

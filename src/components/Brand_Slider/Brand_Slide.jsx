@@ -55,7 +55,7 @@ export default function BrandSlider() {
           '19_GERMANY_LOGO.png', 'LINK_LOGO.png', 'UNV_LOGO.png', 'ZKTECO_LOGO.png',
           'GLINK_LOGO.png', 'ZIRCON_LOGO.png'
         ].map((logo, index) => (
-          <img key={index} src={`../static/${logo}`} alt={`brand-${index}`} />
+          <img key={index} src={`/static/${logo}`} alt={`brand-${index}`} />
         ))}
       </div>
     </section>

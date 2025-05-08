@@ -59,6 +59,7 @@
     text-decoration: none;
     font-size: 14px;
     transition: background-color 0.3s;
+    width: 200px;
   }
   
   .footer-btn:hover {
@@ -94,4 +95,23 @@
   
   .footer-bottom ul li a:hover {
     color: white;
+  }
+
+  .footer-img{
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+  }
+
+  .footer-column.footer-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* หรือกำหนดความสูงเอง เช่น 250px */
+    text-decoration: none;
+  }
+
+  a{
+    text-decoration: none;
   }

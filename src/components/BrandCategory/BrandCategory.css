@@ -171,3 +171,60 @@
   text-align: left;
 }
 
+@media (max-width: 1200px) {
+  .brand-category-grid {
+    grid-template-columns: repeat(4, auto);
+  }
+}
+
+@media (max-width: 992px) {
+  .brand-category-grid {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-category-grid {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media (max-width: 600px) {
+  .brand-category-section {
+    padding: 10px;
+  }
+
+  .brand-category-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 คอลัมน์ในแนวตั้ง */
+    gap: 10px;
+  }
+
+  .brand-category-box {
+    height: 120px;
+    padding: 10px;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .brand-category-box span {
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .brand-category-grid {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .brand-category-box {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .brand-category-box span {
+    font-size: 13px;
+    text-align: center;
+  }
+}
+

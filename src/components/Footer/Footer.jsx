@@ -1,6 +1,8 @@
 import React from 'react';
 import '../../styles.css'; // ถ้ามี CSS เดิม
 import "./Footer.css"
+import { Link } from 'react-router-dom'
+
 export default function Footer() {
   return (
     <footer className="footer">
@@ -51,8 +53,8 @@ export default function Footer() {
 
         {/* 👉 ปุ่ม */}
         <div className="footer-column footer-buttons">
-          <a href="#" className="footer-btn"> 🎧 ติดต่อเรา </a>
-          <a href="#" className="footer-btn"> ✉️ สมัครรับจดหมายข่าว </a>
+          <img src='/static/ID-Line2.png' alt='ID-Line' className='footer-img' ></img>
+          <Link to='/contacts'><div className="footer-btn"> 🎧 ติดต่อเรา </div></Link>
         </div>
       </div>
  

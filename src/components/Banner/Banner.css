@@ -1,4 +1,5 @@
-#banner, .slider-container {
+#banner,
+.slider-container {
   position: relative;
   width: 100%;
   height: 500px; /* 💻 PC/Notebook Default */
@@ -13,8 +14,15 @@
   transition: opacity 3s ease;
 }
 
-.visible { opacity: 1; z-index: 1; }
-.hidden { opacity: 0; z-index: 0; }
+.visible {
+  opacity: 1;
+  z-index: 1;
+}
+
+.hidden {
+  opacity: 0;
+  z-index: 0;
+}
 
 .slide-indicator {
   position: absolute;
@@ -35,12 +43,15 @@
   transition: background-color 0.5s;
 }
 
-.dot.active { background-color: #000; }
+.dot.active {
+  background-color: red;
+}
 
 /* 🔻 Responsive Notebook / Tablet */
 @media (max-width: 1024px) {
-  #banner, .slider-container {
-    height: 400px; /* 📏 Notebook ขนาดกลาง */
+  #banner,
+  .slider-container {
+    height: 400px;
   }
 
   .dot {
@@ -51,8 +62,9 @@
 
 /* 🔻 Responsive โทรศัพท์มือถือ */
 @media (max-width: 768px) {
-  #banner, .slider-container {
-    height: 250px; /* 📱 มือถือ */
+  #banner,
+  .slider-container {
+    height: 250px;
   }
 
   .dot {
@@ -63,8 +75,9 @@
 
 /* 🔻 โทรศัพท์เล็กมาก */
 @media (max-width: 480px) {
-  #banner, .slider-container {
-    height: 180px; /* โทรศัพท์จอเล็ก */
+  #banner,
+  .slider-container {
+    height: 180px;
   }
 
   .dot {

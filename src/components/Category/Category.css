@@ -1,6 +1,6 @@
 .category-section-2 {
     background-color: white;
-    padding: 40px;
+    padding: 20px;
     justify-content: center;
     align-items: center;
     text-align: right;
@@ -19,7 +19,7 @@
   
   .category-grid-2 {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(5, auto);
     gap: 10px;
     justify-content: center;
     
@@ -29,7 +29,8 @@
     background-color: white;
     border-radius: 8px;
     padding: 20px;
-    width: 300px; /* 📏 กำหนดขนาดเท่ากัน */ /* 📏 ความสูงเท่ากัน */
+    width: 200px; /* 📏 กำหนดขนาดเท่ากัน */ /* 📏 ความสูงเท่ากัน */
+    height: 250px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* เงาลึกทั่วทุกด้าน */
     transition: transform 0.2s, box-shadow 0.2s;
@@ -41,7 +42,7 @@
     border: 1px solid #e0e0e0;
   }
   .category-item-2 img{
-    width: 170px;                                                                                                                                                                                                                                                                           
+    width: 130px;                                                                                                                                                                                                                                                                           
   }
   
   .category-item-2:hover {

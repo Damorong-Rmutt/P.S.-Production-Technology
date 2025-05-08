@@ -1,0 +1,100 @@
+.contact-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    color: black;
+    border: 1px solid #e0e0e0;
+    margin: 20px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 1300px;
+  }
+  
+  .contact-container h2 {
+    color: #002140;
+    text-align: center;
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+  
+  /* Contact card grid */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  /* Each card */
+  .contact-card {
+    background-color: white;
+    border-radius: 30px 60px 30px 30px; /* Top-right and bottom-left rounded */
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .contact-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Icon circle */
+  .icon-circle {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-icon {
+    font-size: 38px;
+  }
+  
+  /* Text styles */
+  .card-label {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 0.3rem;
+  }
+  
+  .card-detail {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111827;
+  }
+  
+  /* Google map */
+  .contact-map {
+    margin-top: 3rem;
+    width: 100%;
+    max-width: 100%;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .contact-container {
+      padding: 20px;
+    }
+  
+    .contact-map {
+      height: 300px;
+    }
+  
+    .card-icon {
+      font-size: 32px;
+    }
+  }
+  

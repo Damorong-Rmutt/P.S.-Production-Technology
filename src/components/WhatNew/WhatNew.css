@@ -67,3 +67,35 @@
   font-size: 12px;
   margin: 0;
 }
+
+@media (max-width: 1024px) {
+  .whats-new-grid {
+    grid-template-columns: repeat(2, auto); /* ลดเหลือ 2 คอลัมน์ */
+  }
+
+  .whats-new-item.wide {
+    grid-column: span 2; /* ช่องใหญ่กินเต็มแถว */
+  }
+}
+
+@media (max-width: 768px) {
+  .whats-new-section h2 {
+    font-size: 28px;
+  }
+
+  .whats-new-grid {
+    grid-template-columns: repeat(1, auto); /* แสดงเป็นคอลัมน์เดียว */
+  }
+
+  .whats-new-item.wide {
+    grid-column: auto;
+  }
+
+  .overlay h3 {
+    font-size: 14px;
+  }
+
+  .overlay p {
+    font-size: 11px;
+  }
+}

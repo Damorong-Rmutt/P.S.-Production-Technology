@@ -1,52 +1,69 @@
-/* 🔻 Brand Slider */
+/* ตัวแถบเลื่อนภาพ */
 .brand-step-scroll {
-    display: flex;
-    overflow-x: auto;
-    white-space: nowrap;
-    scroll-behavior: smooth;
-    cursor: grabbing;
-    background-color: white;
-    width: 100%;
-    max-width: 100vw;
-    height: 80px;   
-    align-items: center;
-  }
-  
-  .brand-step-scroll::-webkit-scrollbar {
-    display: none;
-  }
-  
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling:inherit;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* กล่องรวมโลโก้แบรนด์ */
+.brand-track {
+  display: inline-flex;
+  gap: 40px;
+  padding: 0 20px;
+  align-items: center;
+}
+
+/* รูปภาพแบรนด์ */
+.brand-track img {
+  height: 50px;
+  object-fit: contain;
+  transition: transform 0.2s ease-in-out;
+}
+
+.brand-track img:hover {
+  transform: scale(1.1);
+}
+
+.brand-step-scroll::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Opera */
+}
+
+/* Responsive - Tablet */
+@media (max-width: 768px) {
   .brand-track {
-    display: inline-flex;
-    gap: 60px;
-    min-width: max-content;
-    padding-left: 60px;
-    padding-right: 100px;
-    justify-content: center; 
-    text-align: center;
+    gap: 30px;
+    padding: 0 16px;
   }
-  
+
   .brand-track img {
-    height: 45px;
-    flex-shrink: 0;
-    transition: transform 0.3s;
-    justify-content: center;
-    align-items: center;
+    height: 40px;
   }
-  
-  .brand-track img:hover {
-    transform: scale(1.1);
-    height: 45px;
-    flex-shrink: 0;
+}
+
+/* Responsive - Mobile 600px */
+@media (max-width: 600px) {
+  .brand-track {
+    gap: 24px;
+    padding: 0 12px;
   }
-  
-  .brand-step-scroll.dragging img {
-    transform: none !important;
-    transition: none !important;
-    pointer-events: none;
+
+  .brand-track img {
+    height: 35px;
   }
-  
-  .brand-step-scroll, .brand-track, .brand-track img {
-    user-select: none; /* ❌ ไม่ให้ select อะไรเลย */
-    -webkit-user-drag: none; /* ❌ ห้ามลากภาพแบบ browser ทั่วไป */
+}
+
+/* Responsive - Mobile 480px */
+@media (max-width: 480px) {
+  .brand-track {
+    gap: 20px;
+    padding: 0 10px;
   }
+
+  .brand-track img {
+    height: 30px;
+  }
+}

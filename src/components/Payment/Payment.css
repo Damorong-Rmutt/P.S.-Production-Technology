@@ -1,0 +1,111 @@
+.payment-page {
+    display: flex;
+    gap: 24px;
+    padding: 24px;
+    background-color: #ffff;
+    max-width: 1300px;
+    margin: 0 auto;
+    justify-content: center;
+    align-content: center;
+  }
+  
+  .payment-sidebar {
+    width: 220px;
+    background: #ffff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    height: 100%;
+  }
+  
+  .payment-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  
+  .payment-sidebar li {
+    padding: 8px 0;
+    color: #555;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .payment-sidebar li:hover {
+    color: #d93060;
+  }
+  
+  .payment-sidebar li.active {
+    color: #d93060;
+    font-weight: bold;
+  }
+  
+  .payment-sidebar .qr-box {
+    width: 100%;
+    background: #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .payment-sidebar .qr-box img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .payment-content {
+    flex: 1;
+    background: #f3f3f3;
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    background-color: #ffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .payment-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .payment-step {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .payment-step-number {
+    min-width: 40px;
+    height: 40px;
+    background: #E41B17;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .payment-step-text {
+    flex: 1;
+    font-size: 15px;
+    color: #444;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 768px) {
+    .payment-page {
+      flex-direction: column;
+    }
+  
+    .payment-sidebar,
+    .payment-content {
+      width: 100%;
+    }
+  }
+  

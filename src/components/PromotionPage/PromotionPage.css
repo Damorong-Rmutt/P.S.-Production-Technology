@@ -36,6 +36,7 @@
     border-radius: 25px;
     cursor: pointer;
     text-align: center;
+
   }
   
   .promotion-sidebar li.active {
@@ -58,6 +59,10 @@
     width: 210px;
     height: 90px;
     border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
   }
   
   .view-all-btn {
@@ -118,7 +123,7 @@
   }
 
   .promotion-card:hover img {
-    transform: scale(1.1); /* 🔥 ซูมเล็กน้อย */
+    transform: scale(1.05); /* 🔥 ซูมเล็กน้อย */
   }
   .promotion-card .name{
     font-weight: bold;
@@ -154,23 +159,78 @@
 
   @media (max-width: 1024px) {
     .promotion-page {
-      flex-direction: column; /* 🔥 ซ้อนแนวตั้ง */
+      display: flex;
+      flex-direction: column; /* 🔥 เรียงซ้อนแนวตั้ง */
       padding: 10px;
     }
   
     .promotion-sidebar {
-      width: 100%; /* 🔥 เต็มหน้าจอเล็ก */
-      margin-bottom: 20px;
+      width: 100%;           /* 🔥 ใช้ความกว้างเต็ม */
+      margin-bottom: 20px;   /* 🔥 เว้นระยะด้านล่าง */
     }
   
     .promotion-content {
-      padding: 20px;
+      width: 100%;           /* 🔥 ให้เต็มหน้าจอ */
+      padding: 0 10px;
     }
   
     .promotion-grid-2 {
-      grid-template-columns: repeat(2, minmax(150px, 1fr)); /* Tablet 2 คอลัมน์ */
+      display: grid;
+      grid-template-columns: repeat(4, minmax(180px, 1fr)); /* 🔄 ปรับขนาดตามพื้นที่ */
+      gap: 16px;             /* 🔧 เว้นระยะระหว่างการ์ด */
     }
   }
+
+  @media (max-width: 768px) {
+    .promotion-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 🔥 2 คอลัมน์เสมอ */
+      gap: 20px;
+      justify-items: center;
+      padding: 10px;
+    }
+  
+    .promotion-card {
+      width: 100%;
+      max-width: 300px;
+      transition: transform 0.3s ease;
+      overflow: hidden;
+      border-radius: 5px;
+    }
+  
+    .promotion-card:hover img {
+      transform: scale(1.05);
+    }
+  
+    .promotion-card img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  
+    .promotion-title {
+      font-size: 18px;
+      text-align: center;
+      margin-top: 10px;
+    }
+  
+    .promotion-price {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  
+    .promotion-price-old {
+      text-decoration: line-through;
+      color: #888;
+      font-size: 16px;
+    }
+  }
+  
+  
   
   @media (max-width: 600px) {
     .promotion-grid-2 {
@@ -185,4 +245,49 @@
       font-size: 16px;
     }
   }
+
+  /* === Mobile-specific Fixes (สูงสุด 480px) === */
+@media (max-width: 480px) {
+  .promotion-page {
+    padding: 8px;
+  }
+
+  .promotion-sidebar img {
+    width: 100%;
+    height: auto;
+    max-width: 180px;
+  }
+
+  .view-all-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .promotion-content h3 {
+    font-size: 16px;
+  }
+
+  .promotion-card {
+    height: auto;
+    padding: 8px;
+  }
+
+  .promotion-card img {
+    max-height: 180px;
+    object-fit: contain;
+  }
+
+  .promotion-card .description {
+    font-size: 11px;
+  }
+
+  .price {
+    font-size: 14px;
+  }
+
+  .old-price {
+    font-size: 12px;
+  }
+}
+
   

@@ -1,70 +1,76 @@
 .line-container {
-    background-color: white;
-    padding: 20px;
-    justify-content: center;
-    align-items: center;
-    text-align: right;
-  }
-  
+  background-color: white;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: right;
+}
+
+.line-grid {
+  display: grid;
+  grid-template-columns: 850px 280px 280px;
+  gap: 10px;
+  justify-content: center;
+}
+
+.line-large,
+.line-small,
+.line-3 {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.line-large img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.line-small img,
+.line-3 img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.line-large img:hover,
+.line-small img:hover,
+.line-3 img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* 🔻 Responsive: Tablet */
+@media (max-width: 1024px) {
   .line-grid {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    gap: 10px;
-    justify-content: center;
+    grid-template-columns: 1fr 1fr;
   }
-  
+
   .line-large {
-    overflow: hidden; 
-    border-radius: 10px;
+    grid-column: span 2;
   }
-  
-  .line-small {
-    overflow: hidden;
-    border-radius: 10px;
+}
+
+/* 🔻 Responsive: Mobile */
+@media (max-width: 768px) {
+  .line-grid {
+    grid-template-columns: 1fr;
   }
+
+  .line-large,
+  .line-small,
   .line-3 {
-    overflow: hidden;
-    border-radius: 10px;
+    grid-column: auto;
   }
-  
-  .line-large img{
-    width: 850px;
-    height: 400px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-    display: block;
+
+  .line-large img,
+  .line-small img,
+  .line-3 img {
+    height: 200px;
   }
-  .line-small img {
-    width: 280px;
-    height: 400px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-    display: block;
-  }
-  .line-3 img{
-    width: 280px;
-    height: 400px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-    display: block;
-  }
-  
-  .line-large img:hover,
-  .line-small img:hover {
-    transform: scale(1.1); /* 🔥 ซูมเฉพาะภาพ */
-    cursor: pointer;
-    /* ไม่ต้องมี box-shadow ถ้าไม่อยากให้ขยาย */
-  }
-  
-  /* Responsive สำหรับมือถือ */
-  @media (max-width: 768px) {
-    .line-grid {
-      grid-template-columns: 1fr;
-      max-height: none;
-    }
-  
-    .line-large {
-      grid-row: auto;
-    }
-  }
-  
+}
+

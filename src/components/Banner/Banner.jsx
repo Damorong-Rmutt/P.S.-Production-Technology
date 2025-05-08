@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import "../../styles.css";
-import "./banner.css";
+import "./Banner.css";
 
 export default function BannerSlider() {
   const [current, setCurrent] = useState(0);
   const images = [
-    '../static/02.jpg',
-    '../static/03.jpg',
-    '../static/01.jpg',
-    '../static/04.jpg',
-    '../static/05.jpg',
+    '/static/02.jpg',
+    '/static/03.jpg',
+    '/static/01.jpg',
+    '/static/04.jpg',
+    '/static/05.jpg',
     
   ];
 

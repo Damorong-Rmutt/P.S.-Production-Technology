@@ -112,10 +112,40 @@ a.toggle-text:hover {
   }
 }
 
+@media (max-width: 600px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 คอลัมน์ */
+    gap: 15px;
+  }
+
+  .category-item {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .category-item img {
+    width: 120px;
+  }
+
+  .category-item span {
+    font-size: 16px;
+  }
+
+  .category-section h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  a.toggle-text {
+    font-size: 14px;
+    margin-right: 20px;
+  }
+}
+
 /* 🔻 โทรศัพท์จอเล็ก */
 @media (max-width: 480px) {
   .category-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr)
   }
 
   .category-section h2 {

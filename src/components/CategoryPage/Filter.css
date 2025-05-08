@@ -1,0 +1,38 @@
+.accordion-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .accordion-item {
+    border: 1px solid #eee;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  .accordion-header {
+    background-color: #ffdada;
+    padding: 8px 12px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #cc0033;
+  }
+  
+  .accordion-content {
+    padding: 10px 12px;
+    background-color: #fff0f0;
+    font-size: 14px;
+  }
+  
+  .accordion-content label {
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  
+  .product-count {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 5px;
+  }
