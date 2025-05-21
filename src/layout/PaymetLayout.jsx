@@ -7,13 +7,13 @@ import Payment from '../components/Payment/Payment';
 
 function PaymetLayout() {
   return (
-    <section>
+    <div>
         <Nav></Nav>
         <Banner></Banner>
         <BrandSlider></BrandSlider>
         <Payment></Payment>
         <Footer></Footer>
-    </section>
+    </div>
   )
 }
 

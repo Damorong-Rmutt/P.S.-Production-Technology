@@ -7,13 +7,13 @@ import CategoryPage from "../components/CategoryPage/CategoryPage";
 
 function CategoryPageLayout() {
   return (
-    <section>
+    <div>
       <Nav></Nav>
       <Banner></Banner>
       <Brand_Slide></Brand_Slide>
       <CategoryPage></CategoryPage>
       <Footer></Footer>
-    </section>
+    </div>
   );
 }
 

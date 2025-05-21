@@ -7,13 +7,13 @@ import Footer from "../components/Footer/Footer";
 
 function ContactLayout() {
   return (
-    <section>
+    <div>
       <Nav></Nav>
       <Banner></Banner>
       <Brand_Slide></Brand_Slide>
       <Contact></Contact>
       <Footer></Footer>
-    </section>
+    </div>
   );
 }
 

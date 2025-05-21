@@ -2,10 +2,35 @@
 
 html{
   font-size: 12px;
+  scroll-behavior: smooth; /* optional */
+  margin: 0;
+  overflow-y: scroll;
+  padding: 0;
 }
 
 body{
   font-family: "Kanit", sans-serif;
   font-weight: 400;
   font-style: normal;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll; /* บังคับให้มี scrollbar ด้านข้างเสมอ */
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
 }

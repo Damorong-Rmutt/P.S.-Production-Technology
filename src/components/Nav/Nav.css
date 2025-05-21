@@ -8,12 +8,33 @@
   padding: 5px 80px;
   font-size: 14px;
   height: 50px;
+  position: sticky;  /* ✅ เปลี่ยนจาก relative เป็น sticky */
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเล็กน้อยให้แยกจากเนื้อหา */
 }
 
 .top-bar-right {
   display: flex;
   gap: 20px;
   align-items: center;
+}
+
+.phone-call{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 16px;
+}
+
+.email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 16px;
+  position: sticky;
 }
 
 /* 🔻 Navbar */
@@ -23,7 +44,10 @@
   justify-content: space-between;
   padding: 10px 20px;
   background-color: #fff;
-  position: relative;
+  position: sticky;  /* ✅ เปลี่ยนจาก relative เป็น sticky */
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเล็กน้อยให้แยกจากเนื้อหา */ 
 }
 
 .logo img {
@@ -47,7 +71,7 @@
 }
 
 .navbar li a:hover {
-  background-color: red;
+  background-color: #e41b17;
   color: white;
   font-size: 22px;
 }
@@ -80,7 +104,7 @@
 
 .dropdown-menu li a:hover {
   background-color: #f8f8ff;
-  color: red;
+  color: #e41b17;
 }
 
 .dropdown.active .dropdown-menu {

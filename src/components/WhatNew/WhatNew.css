@@ -1,5 +1,5 @@
 .whats-new-section {
-  background-color: white;
+  background-color: #ffff;
   padding: 20px;
   padding-bottom: 80px;
   display: flex;
@@ -12,6 +12,11 @@
   font-size: 36px;
   margin-bottom: 30px;
   color: #222;
+  font-weight: bold;
+}
+
+.red-text {
+  color: #E41B17;
   font-weight: bold;
 }
 

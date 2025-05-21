@@ -1,0 +1,326 @@
+.promo-row {
+  position: relative;
+  padding-bottom: 10px;   /* ลดจาก 30px */
+  margin-bottom: 8px;     /* ลดจาก 40px หรือ 0 */
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.promo-row::after {
+  content: "";
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: 1px;
+  background-color: #ccc;
+  margin: 12px auto 0 auto;  /* ลดจาก 24px หรือ 16px */
+}
+.promo-heading {
+  text-align: center;
+  font-size: 24px;
+  color: #d93060;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.promo-subheading {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.baht-icon {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1px;
+  font-size: 18px;
+  justify-content: center;
+  transform: translateY(-1px);
+}
+
+.baht-icon-2 {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1px;
+  font-size: 15px;
+  transform: translateY(3px); /* เลื่อนแนว baseline ให้ตรง */
+}
+
+.promo-row {
+  margin-bottom: 40px;
+}
+
+.promo-wrapper {
+  display: flex;
+  gap: 15px;
+  padding: 0 24px;
+  background: white;
+  max-width: 1300px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.promo-banner {
+  width: 220px;
+  height: 310px;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 15px 20px 0;
+}
+
+.promo-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.more-btn {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(#000,red,pink);
+  color: #fff;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #d93060;
+  color: white;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-bottom-left-radius: 8px;
+}
+
+.promo-scroll-container {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+.carousel-viewport {
+  overflow: hidden;
+  width: 945px; /* 220*4 + 20*3 = 920px */
+  padding: 0; /* ลบ padding ที่ดันขอบ */
+  margin: 0 auto; /* จัดกลางถ้าต้องการ */
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.4s ease;
+  background-color: white;
+  padding: 20px 0; /* ลด padding เหลือเท่ากันทั้งบนล่าง */
+}
+
+.promo-card {
+  width: 220px;
+  height: 310px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  position: relative;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
+}
+
+.promo-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  border-color: #d93060;
+}
+
+.promo-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.discount-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #d93060;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.promo-details {
+  padding: 12px 0;
+}
+
+.promo-name {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  height: 38px;
+  overflow: hidden;
+}
+
+.price {
+  font-size: 14px;
+}
+
+.new-price {
+  color: #d93060;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 13px;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.scroll-btn.left {
+  left: 10px;
+}
+
+.scroll-btn.right {
+  right: 10px;
+}
+
+/* === Responsive Breakpoints === */
+@media (max-width: 1024px) {
+  .carousel-viewport {
+    width: 720px; /* 3 cards: 220*3 + 20*2 */
+  }
+  .scroll-btn.left{
+    top: 40%;
+    transform: translateY(-40%);
+    width: 32px;
+    height: 32px;
+    font-size: 16px;  
+  }
+  .scroll-btn.right {
+    top: 40%;
+    transform: translateY(-40%);
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .promo-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .promo-banner {
+    margin: 0 auto 20px auto;
+  }
+
+  .carousel-viewport {
+    width: 480px; /* 2 cards */
+  }
+
+  .promo-subheading {
+    margin-left: 20px;
+    text-align: left;
+  }
+
+  .scroll-btn.left{
+    top: 40%;
+    transform: translateY(-40%);
+    width: 32px;
+    height: 32px;
+    font-size: 16px;  
+  }
+  .scroll-btn.right {
+    top: 40%;
+    transform: translateY(-40%);
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-viewport {
+    width: 230px; /* 1 card */
+  }
+
+  .promo-card{
+    width: 220px;
+  }
+  .promo-banner {
+    width: 100%;
+    height: auto;
+  }
+
+  .promo-card img,
+  .promo-banner img {
+    height: auto;
+  }
+
+  .promo-subheading {
+    font-size: 16px;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+  }
+
+  .promo-heading {
+    font-size: 20px;
+  }
+  .carousel-track {
+    gap: 20px;
+  }
+  .scroll-btn.left{
+    left: -0.1px;
+  }
+}
+

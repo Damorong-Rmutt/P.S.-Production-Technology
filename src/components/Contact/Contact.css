@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
 .contact-container {
+  font-family: "Poetsen One", sans-serif;
     background-color: white;
     padding: 30px;
     border-radius: 10px;
@@ -10,10 +13,11 @@
   }
   
   .contact-container h2 {
-    color: #002140;
+    color: black;
     text-align: center;
+    font-size: 80px;
+    font-weight:1000;
     width: 100%;
-    margin-top: 1em;
     margin-bottom: 0.5em;
   }
   
@@ -28,7 +32,7 @@
   /* Each card */
   .contact-card {
     background-color: white;
-    border-radius: 30px 60px 30px 30px; /* Top-right and bottom-left rounded */
+    border-radius: 0px 60px 0px 60px; /* Top-right and bottom-left rounded */
     padding: 2rem 1rem;
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);

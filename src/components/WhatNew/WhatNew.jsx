@@ -3,7 +3,7 @@ import './WhatNew.css';
 export default function WhatsNew() {
   return (
     <section className="whats-new-section">
-      <h2>What's news</h2>
+      <h2><span className="red-text">What's</span> news</h2>
       <div className="whats-new-grid">
         <div className="whats-new-item wide">
           <img src="https://place-hold.it/930x300" alt="AIoT Technologies" />
