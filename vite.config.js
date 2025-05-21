@@ -5,6 +5,6 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: true,
-    historyApiFallback: true // 🔥 รองรับ React Router พิมพ์ URL ตรง
+    historyApiFallback: true 
   }
 });

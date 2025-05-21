@@ -3,9 +3,9 @@ import Login from "../components/Login/Login";
 
 function LoginLayout() {
   return (
-    <section>
+    <div>
         <Login></Login>
-    </section>
+    </div>
   );
 }
 

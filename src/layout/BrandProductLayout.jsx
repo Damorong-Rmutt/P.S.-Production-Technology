@@ -8,13 +8,13 @@ import Nav from "../components/Nav/Nav";
 
 function BrandProductLayout() {
   return (
-    <section>
+    <div>
         <Nav></Nav>
         <Banner></Banner>
         <Brand_Slide></Brand_Slide>
         <BrandProduct></BrandProduct>
         <Footer></Footer>
-    </section>
+    </div>
   );
 }
 

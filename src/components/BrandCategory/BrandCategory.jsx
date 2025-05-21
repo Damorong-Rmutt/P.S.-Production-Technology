@@ -4,7 +4,7 @@ import "./BrandCategory.css";
 export default function BrandCategory() {
   return (
     <section className="brand-category-section">
-      <h2>Brand Category</h2>
+      <h2><span className="brand-red">Brand</span> Category</h2>
       <div className="brand-category-grid">
         <div className="brand-category-box"><img src='/static/001.png'/></div>
         <div id="Dahua" className="brand-category-box" ><img src='/static/002.png'/></div>

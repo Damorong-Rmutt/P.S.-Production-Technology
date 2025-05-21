@@ -7,13 +7,13 @@ import Category from "../components/Category/Category";
 
 function ProductLayout() {
   return (
-      <section>
+      <div>
           <Nav></Nav>
           <Banner></Banner>
           <Brand_Slide></Brand_Slide>
           <Category></Category>
           <Footer></Footer>
-      </section>
+      </div>
     );
 }
 
