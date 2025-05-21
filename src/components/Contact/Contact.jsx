@@ -22,7 +22,7 @@ const ContactCard = ({ icon, label, detail, color }) => (
 function Contact() {
   return (
     <div className="contact-container">
-      <h2>ช่องทางการติดต่อ</h2>
+      <h2>Contact Us</h2>
 
       {/* Contact Cards */}
       <div className="card-grid">
@@ -53,7 +53,7 @@ function Contact() {
         <ContactCard
           icon={<FaFacebook />}
           label="Facebook"
-          detail="facebook.com/pspro9999"
+          detail="P.S.Production Technology"
           color="#1877f2"
         />
       </div>

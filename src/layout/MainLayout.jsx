@@ -12,7 +12,7 @@ import WhatsNew from "../components/WhatNew/WhatNew";
 
 function MainLayout() {
   return (
-    <section>
+    <div>
         <Nav></Nav>
         <Banner></Banner>
         <Brand_Slide></Brand_Slide>
@@ -23,7 +23,7 @@ function MainLayout() {
         <PromotionPage></PromotionPage>
         <WhatsNew></WhatsNew>
         <Footer></Footer>
-    </section>
+    </div>
   );
 }
 

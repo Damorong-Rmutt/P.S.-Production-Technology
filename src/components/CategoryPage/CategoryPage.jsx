@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import "./CategoryPage.css";
 import "./Filter.css";
-
+const API_BASE = import.meta.env.VITE_API_BASE;
 function CategoryPage() {
   const { type_id, type_name } = useParams();
   const location = useLocation();
@@ -22,13 +22,13 @@ function CategoryPage() {
     const params = new URLSearchParams();
     params.append("page", currentPage);
     params.append("sort", sortOrder);
-    Object.keys(selectedFilters).forEach(key => {
-      selectedFilters[key].forEach(value => {
+    Object.keys(selectedFilters).forEach((key) => {
+      selectedFilters[key].forEach((value) => {
         params.append(key === "Brand" ? "category_id" : key, value); // ส่ง category_id แทน Brand
       });
     });
 
-    fetch(`http://192.168.1.153:5000/api/products/category/${type_id}?${params}`)
+    fetch(`${API_BASE}/products/category/${type_id}?${params}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.products) {
@@ -55,7 +55,7 @@ function CategoryPage() {
   }, [selectedFilters]);
 
   useEffect(() => {
-    fetch(`http://192.168.1.153:5000/api/filters/${type_id}`)
+    fetch(`${API_BASE}/filters/${type_id}`)
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) {
@@ -81,7 +81,7 @@ function CategoryPage() {
   const toggleFilter = (title) => {
     setOpenFilters((prev) => ({
       ...prev,
-      [title]: !prev[title]
+      [title]: !prev[title],
     }));
   };
 
@@ -108,37 +108,46 @@ function CategoryPage() {
         </select>
 
         <div className="accordion-filters">
-          {Array.isArray(filters) && filters.map(({ title, options }) => (
-            <div key={title} className="accordion-item">
-              <div className="accordion-header" onClick={() => toggleFilter(title)}>
-                {title} ▼
-              </div>
-              {openFilters[title] && (
-                <div className="accordion-content">
-                  {options.map(({ id, name }) => (
-                    <label key={id}>
-                      <input
-                        type="checkbox"
-                        checked={selectedFilters[title]?.includes(id) || false}
-                        onChange={() => handleFilterChange(title, id)}
-                      />{" "}
-                      {name}
-                    </label>
-                  ))}
+          {Array.isArray(filters) &&
+            filters.map(({ title, options }) => (
+              <div key={title} className="accordion-item">
+                <div
+                  className="accordion-header"
+                  onClick={() => toggleFilter(title)}
+                >
+                  {title} ▼
                 </div>
-              )}
-            </div>
-          ))}
+                {openFilters[title] && (
+                  <div className="accordion-content">
+                    {options.map(({ id, name }) => (
+                      <label key={id}>
+                        <input
+                          type="checkbox"
+                          checked={
+                            selectedFilters[title]?.includes(id) || false
+                          }
+                          onChange={() => handleFilterChange(title, id)}
+                        />{" "}
+                        {name}
+                      </label>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
         </div>
       </div>
 
       <div className="category-content">
-        <div className="product-count">
-          {products.length} Products Match
-        </div>
+        <div className="product-count">{products.length} Products Match</div>
         <div className="category-grid-3">
           {products.map((product) => (
-            <div key={product.product_id} className="category-card">
+            <div
+              key={product.product_id}
+              className="category-card"
+              onClick={() => navigate(`/product/${product.product_id}`)}
+              style={{ cursor: "pointer" }}
+            >
               <img src={product.product_img} alt={product.product_name} />
               <h5>{product.product_name}</h5>
               <p className="description">{product.product_description}</p>
@@ -152,7 +161,10 @@ function CategoryPage() {
         </div>
 
         <div className="pagination">
-          <button onClick={() => handlePageClick(currentPage - 1)} disabled={currentPage === 1}>
+          <button
+            onClick={() => handlePageClick(currentPage - 1)}
+            disabled={currentPage === 1}
+          >
             &lt;
           </button>
           {Array.from({ length: totalPages }, (_, i) => (

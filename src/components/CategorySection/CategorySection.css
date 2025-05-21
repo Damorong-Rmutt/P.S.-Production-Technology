@@ -86,6 +86,11 @@ a.toggle-text:hover {
   color: darkred;
 }
 
+.spotlight-red{
+  color: #E41B17;
+  font-weight: bold;
+}
+
 /* 🔻 Responsive Notebook */
 @media (max-width: 1024px) {
   .category-grid {

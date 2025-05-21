@@ -6,6 +6,11 @@
   align-items: center;
 }
 
+.brand-red{
+  color: #E41B17;
+  font-weight: bold;
+}
+
 .brand-category-section h2 {
   font-size: 36px;
   font-weight: bold;

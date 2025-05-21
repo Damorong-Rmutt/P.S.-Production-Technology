@@ -8,6 +8,8 @@ import PrivateRoute from "./PriveteRoute";
 import ContactLayout from "./layout/ContactLayout";
 import CategoryPageLayout from "./layout/CategoryPageLayout";
 import PaymetLayout from "./layout/PaymetLayout";
+import ProductPageLayout from "./layout/ProductPageLayout";
+
 
 
 function App() {
@@ -23,6 +25,7 @@ function App() {
           <PrivateRoute><DashboardLayout /></PrivateRoute>} />
           <Route path="/contacts" element={<ContactLayout />} />
           <Route path="/category/:type_id/:type_name" element={<CategoryPageLayout />} />
+          <Route path="/product/:product_id" element={<ProductPageLayout />} />
         </Routes>
     </Router>
   );

@@ -3,9 +3,9 @@ import Dashboard from "../components/Dashboard/Dashboard";
 
 function DashboardLayout() {
   return (
-    <section>
+    <div>
         <Dashboard></Dashboard>
-    </section>
+    </div>
   );
 }
 

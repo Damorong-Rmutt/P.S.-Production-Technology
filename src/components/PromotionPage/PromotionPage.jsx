@@ -1,38 +1,43 @@
 import { useState, useEffect } from "react";
 import "./PromotionPage.css";
+import { TbCurrencyBaht } from "react-icons/tb";
+import { Link, useNavigate } from 'react-router-dom'; // ✅ เพิ่ม useNavigate
+
+const API_BASE = import.meta.env.VITE_API_BASE;
 
 export default function PromotionPage() {
   const [categories, setCategories] = useState([]);
   const [product, setProduct] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const navigate = useNavigate(); // ✅ ใช้งาน navigate
 
   // 🔥 ดึงหมวดหมู่จาก API
   useEffect(() => {
-    fetch('http://192.168.1.153:5000/api/categories')
-      .then(res => res.json())
-      .then(data => {
+    fetch(`${API_BASE}/categories`)
+      .then((res) => res.json())
+      .then((data) => {
         setCategories(data);
-        setSelectedCategory(data[0].category_code); // ตั้งค่าหมวดแรกเป็นค่าเริ่มต้น
-      });
+        setSelectedCategory(data[0]?.category_code);
+      })
+      .catch((err) => console.error("โหลดหมวดหมู่ล้มเหลว:", err));
   }, []);
 
   // 🔥 ดึงสินค้าตามหมวดหมู่จาก API
   useEffect(() => {
-  if (selectedCategory) {
-    fetch(`http://192.168.1.153:5000/api/products?category=${selectedCategory}`)
-      .then(res => res.json())
-      .then(data => {
-        console.log("ข้อมูลสินค้าจาก API:", data);
-        if (Array.isArray(data)) {
-          setProduct(data);
-        } else {
-          console.error("ข้อมูลไม่ใช่ array:", data);
-          setProduct([]); // แก้ไขชั่วคราว
-        }
-      })
-      .catch(err => console.error("Fetch Error:", err));
-  }
-}, [selectedCategory]);
+    if (selectedCategory) {
+      fetch(`${API_BASE}/products?category=${selectedCategory}`)
+        .then((res) => res.json())
+        .then((data) => {
+          const parsed = data.map((p) => ({
+            ...p,
+            features: typeof p.features === "string" ? JSON.parse(p.features || "[]") : p.features,
+            icons: typeof p.icons === "string" ? JSON.parse(p.icons || "[]") : p.icons,
+          }));
+          setProduct(parsed);
+        })
+        .catch((err) => console.error("โหลดสินค้าไม่สำเร็จ:", err));
+    }
+  }, [selectedCategory]);
 
   return (
     <div className="promotion-page">
@@ -51,28 +56,56 @@ export default function PromotionPage() {
         </ul>
         <img src="https://place-hold.it/210x90" alt="banner" />
       </aside>
+
       <main className="promotion-content">
         <h3>
-          <p>Set Promotion&nbsp;
-            {categories.find((cat) => cat.category_code === selectedCategory)?.category_name}
-          </p>
+            Set Promotion&nbsp;
+            <span className="category-red">
+              {
+                categories.find((cat) => cat.category_code === selectedCategory)
+                  ?.category_name
+              }
+            </span>
         </h3>
+
         <div className="promotion-grid-2">
           {product.map((product) => (
-            <div key={product.product_id} className="promotion-card">
+            <div
+              key={product.product_id}
+              className="promotion-card"
+              onClick={() => navigate(`/product/${product.product_id}`)} // ✅ ไปหน้า Product
+            >
               <img src={product.product_img} alt={product.product_name} />
               <p className="name">{product.product_name}</p>
+
               <div className="price-row">
-                <span className="price">฿{product.product_price.toLocaleString()}</span>
-                <span className="old-price">
-                  ฿{product.product_old_price.toLocaleString()}
-                </span>
+                {product.is_promotion === 1 ? (
+                  <>
+                    <span className="price">
+                      <span className="baht-icon"><TbCurrencyBaht /></span>
+                      {Number(product.product_price).toLocaleString()}
+                    </span>
+                    <span className="old-price">
+                      <span className="baht-icon-2"><TbCurrencyBaht /></span>
+                      {Number(product.product_old_price).toLocaleString()}
+                    </span>
+                  </>
+                ) : (
+                  <span className="price">
+                    <span className="baht-icon"><TbCurrencyBaht /></span>
+                    {Number(product.product_old_price).toLocaleString()}
+                  </span>
+                )}
               </div>
+
               <p className="description">{product.product_description}</p>
             </div>
           ))}
         </div>
-        <button className="view-all-btn">ดูโปรโมชั่นทั้งหมด</button>
+
+        <Link to="/promotion">
+          <button className="view-all-btn">ดูโปรโมชั่นทั้งหมด</button>
+        </Link>
       </main>
     </div>
   );
